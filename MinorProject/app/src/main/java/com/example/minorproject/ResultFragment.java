@@ -40,20 +40,20 @@ public class ResultFragment extends Fragment {
         //initializing views
         initViews(view);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
-
-        // Initialize the adapter and attach it to the RecyclerView
-        adapter = new UtteranceAdapter(requireActivity());
-        recyclerView.setAdapter(adapter);
-
-        viewModel = new ViewModelProvider(requireActivity()).get(UtteranceViewModel.class);
-        viewModel.getUtterancesList().observe(requireActivity(), new Observer<List<String>>() {
-            @Override
-            public void onChanged(List<String> strings) {
-                adapter.setDataset(strings);
-                textView.setVisibility(View.GONE);
-            }
-        });
+//        recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
+//
+//        // Initialize the adapter and attach it to the RecyclerView
+//        adapter = new UtteranceAdapter(requireActivity());
+//        recyclerView.setAdapter(adapter);
+//
+//        viewModel = new ViewModelProvider(requireActivity()).get(UtteranceViewModel.class);
+//        viewModel.getUtterancesList().observe(requireActivity(), new Observer<List<String>>() {
+//            @Override
+//            public void onChanged(List<String> strings) {
+//                adapter.setDataset(strings);
+//                textView.setVisibility(View.GONE);
+//            }
+//        });
     }
 
     public void initViews(View view){

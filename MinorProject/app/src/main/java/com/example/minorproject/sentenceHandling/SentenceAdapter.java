@@ -26,6 +26,10 @@ public class SentenceAdapter extends RecyclerView.Adapter<SentenceAdapter.Senten
         mlistener = listener;
     }
 
+    public List<Sentence> getDataset(){
+        return mSentences;
+    }
+
     @Override
     public int getItemCount() {
         if(mSentences == null){

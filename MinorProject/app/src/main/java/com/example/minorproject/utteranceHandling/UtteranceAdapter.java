@@ -19,9 +19,11 @@ public class UtteranceAdapter extends RecyclerView.Adapter<UtteranceAdapter.Utte
 
     private List<String> utteranceEntries;
     private Context mContext;
+    private onUtteranceClickListener listener;
 
-    public UtteranceAdapter(Context context){
+    public UtteranceAdapter(Context context,onUtteranceClickListener listener){
         mContext = context;
+        this.listener = listener;
     }
 
     @NonNull
@@ -29,7 +31,7 @@ public class UtteranceAdapter extends RecyclerView.Adapter<UtteranceAdapter.Utte
     @Override
     public UtteranceViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,parent,false);
-        return new UtteranceViewHolder(view);
+        return new UtteranceViewHolder(view,listener);
     }
 
     @Override
@@ -54,14 +56,27 @@ public class UtteranceAdapter extends RecyclerView.Adapter<UtteranceAdapter.Utte
 
     public static class UtteranceViewHolder extends RecyclerView.ViewHolder{
         private TextView textView;
+        private onUtteranceClickListener listener;
 
-        public UtteranceViewHolder(View view){
+        public UtteranceViewHolder(View view,onUtteranceClickListener listener){
             super(view);
             textView = (TextView) view.findViewById(R.id.textView);
+            this.listener = listener;
+
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onUtteranceClick(getAdapterPosition());
+                }
+            });
         }
 
         public TextView getTextView() {
             return textView;
         }
+    }
+
+    public interface onUtteranceClickListener{
+        public void onUtteranceClick(int position);
     }
 }
