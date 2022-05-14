@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String BASE_URL = "https://ad2f-106-67-25-34.in.ngrok.io";
+    private final String BASE_URL = " https://81ea-2402-8100-2259-c6ec-85e4-7e0e-46fe-abe5.in.ngrok.io";
     private final String TAG = MainActivity.class.getSimpleName();
 
     private UtteranceViewModel viewModel;

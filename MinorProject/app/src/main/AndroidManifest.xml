@@ -12,9 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MinorProject">
-
-        <activity android:name=".NewUserActivity"></activity>
-
+        <activity android:name=".LoadFileActivity"></activity>
+        <activity android:name=".NewUserActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
