@@ -1,10 +1,10 @@
-package com.example.minorproject;
+package com.example.minorproject.Network;
 
-import org.json.JSONObject;
+import com.example.minorproject.utteranceHandling.ResponseUtterance;
+import com.example.minorproject.utteranceHandling.UtteranceQuery;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface UtteranceAPI {

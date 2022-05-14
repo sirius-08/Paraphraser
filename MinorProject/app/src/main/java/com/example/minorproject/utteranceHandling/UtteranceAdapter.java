@@ -1,4 +1,4 @@
-package com.example.minorproject;
+package com.example.minorproject.utteranceHandling;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.minorproject.R;
 
 import org.jetbrains.annotations.NotNull;
 

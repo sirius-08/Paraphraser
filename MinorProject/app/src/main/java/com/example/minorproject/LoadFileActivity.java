@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.minorproject.sentenceHandling.SentenceActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.BufferedReader;
@@ -27,11 +28,18 @@ public class LoadFileActivity extends AppCompatActivity {
     private String TAG = LoadFileActivity.class.getSimpleName();
     private TextView textView;
 
+    public static String paragraphKey = "com.example.minorproject.paragraph";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load_file);
 
+        initViews();
+
+    }
+
+    void initViews(){
         textView = (TextView) findViewById(R.id.loadFile_textView);
 
         FloatingActionButton loadFileButtton = (FloatingActionButton) findViewById(R.id.loadFileButton);
@@ -50,6 +58,12 @@ public class LoadFileActivity extends AppCompatActivity {
                 startActivityForResult(intent,loadFileCode);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"Activity Destroyed");
     }
 
     @Override
@@ -77,17 +91,6 @@ public class LoadFileActivity extends AppCompatActivity {
 
     void readFromUri(Uri uri){
         StringBuilder stringBuilder = new StringBuilder();
-//        try {
-//            (InputStream inputStream =
-//                    getContentResolver().openInputStream(uri);
-//            BufferedReader reader = new BufferedReader(
-//                    new InputStreamReader(Objects.requireNonNull(inputStream)))){
-//                String line;
-//                while ((line = reader.readLine()) != null) {
-//                    stringBuilder.append(line);
-//                }
-//            }
-//        }
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);
             BufferedReader reader = new BufferedReader(new InputStreamReader((Objects.requireNonNull(inputStream))));
@@ -101,6 +104,9 @@ public class LoadFileActivity extends AppCompatActivity {
             e.printStackTrace();
             return;
         }
-        textView.setText(stringBuilder.toString());
+
+        Intent intent = new Intent(this, SentenceActivity.class);
+        intent.putExtra(paragraphKey,stringBuilder.toString());
+        startActivity(intent);
     }
 }

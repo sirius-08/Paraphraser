@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MinorProject">
-        <activity android:name=".LoadFileActivity"></activity>
-        <activity android:name=".NewUserActivity" />
+        <activity android:name=".sentenceHandling.SentenceActivity"></activity>
+        <activity android:name=".LoadFileActivity" />
+        <activity android:name=".LoginHandling.NewUserActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".LoginHandling.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

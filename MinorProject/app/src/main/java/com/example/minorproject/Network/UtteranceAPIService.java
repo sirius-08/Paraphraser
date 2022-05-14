@@ -1,5 +1,6 @@
-package com.example.minorproject;
+package com.example.minorproject.Network;
 
+import com.example.minorproject.Network.UtteranceAPI;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

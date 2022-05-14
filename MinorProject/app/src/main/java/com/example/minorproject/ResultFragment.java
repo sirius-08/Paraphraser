@@ -3,10 +3,7 @@ package com.example.minorproject;
 import android.os.Bundle;
 
 
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +13,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.minorproject.utteranceHandling.UtteranceAdapter;
+import com.example.minorproject.utteranceHandling.UtteranceViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

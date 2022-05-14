@@ -1,4 +1,4 @@
-package com.example.minorproject;
+package com.example.minorproject.LoginHandling;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.minorproject.LoadFileActivity;
+import com.example.minorproject.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -24,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,LoadFileActivity.class);
+                Intent intent = new Intent(LoginActivity.this, LoadFileActivity.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,NewUserActivity.class);
+                Intent intent = new Intent(LoginActivity.this, NewUserActivity.class);
                 startActivity(intent);
             }
         });

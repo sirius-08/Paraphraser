@@ -1,8 +1,10 @@
-package com.example.minorproject;
+package com.example.minorproject.LoginHandling;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.minorproject.R;
 
 public class NewUserActivity extends AppCompatActivity {
 

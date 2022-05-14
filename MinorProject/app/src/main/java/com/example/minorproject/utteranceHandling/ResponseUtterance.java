@@ -1,4 +1,4 @@
-package com.example.minorproject;
+package com.example.minorproject.utteranceHandling;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
