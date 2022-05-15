@@ -10,7 +10,7 @@ public class SentenceUtils {
 
         for(int i=0;i<paragraph.length();i++)
         {
-            if(paragraph.charAt(i) == '.'){
+            if(paragraph.charAt(i) == '.' || paragraph.charAt(i) == '!' || paragraph.charAt(i) == '?'){
                 sentences.add(new Sentence(temp,temp));
                 temp = "";
             }
@@ -21,10 +21,10 @@ public class SentenceUtils {
         return sentences;
     }
 
-    public static String sentencesToParagraph(ArrayList<String> sentences){
+    public static String sentencesToParagraph(List<Sentence> sentences){
         String paragraph = "";
         for(int i=0;i<sentences.size();i++){
-            paragraph += sentences.get(i) + ".";
+            paragraph += sentences.get(i).getRephrased() + ".";
         }
         return paragraph;
     }

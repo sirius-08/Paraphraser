@@ -28,7 +28,10 @@ public class LoadFileActivity extends AppCompatActivity {
     private String TAG = LoadFileActivity.class.getSimpleName();
     private TextView textView;
 
-    public static String paragraphKey = "com.example.minorproject.paragraph";
+    private Uri uri;
+
+    public static String paragraphKey = "com.example.minorproject.paragraphKey";
+    public static String uriKey = "com.example.minorproject.uriKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +75,9 @@ public class LoadFileActivity extends AppCompatActivity {
         if(requestCode == loadFileCode && resultCode == Activity.RESULT_OK)
         {
             if(data != null){
-                Uri uri = data.getData();
+                uri = data.getData();
                 Log.d(TAG,uri.toString());
-                textView.setText(uri.toString());
+                //textView.setText(uri.toString());
                 readFromUri(uri);
             }
             else
@@ -107,6 +110,7 @@ public class LoadFileActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, SentenceActivity.class);
         intent.putExtra(paragraphKey,stringBuilder.toString());
+        intent.setData(uri);
         startActivity(intent);
     }
 }
